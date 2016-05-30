@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var spritesmith = require('gulp.spritesmith');
 var rename = require('gulp-rename');
+var includer = require('gulp-htmlincluder');
 
 gulp.task('spriteCreator', function(){
 	var sprite = gulp.src('dev/img/icons/*.png').pipe(spritesmith({
@@ -18,3 +19,6 @@ gulp.task('spriteCreator', function(){
 gulp.task('cssCreator', function(){
 	gulp.src('dev/less/general.less').pipe(less()).pipe(gulp.dest('build/css'));
 })
+gulp.task('htmlCreator', function(){
+	gulp.src('dev/**/*.html').pipe(includer()).pipe(gulp.dest('build/'));
+});
