@@ -1,23 +1,46 @@
 .header{
-	background-color: #ffffff;
+	background-color: @base-color;
 	&-top{
 		background-color: #000;
-	}
-	&-pad_top{
-		padding-top: 37px;
-	}
-	&-box{
-		.inline-block;
-		border-left: 2px solid #444444;
-		color: #ffffff;
-		&:first-child{
-			border-left: none;
+		font-size: 1.9rem;
+		text-transform: uppercase;
+		@media screen and (min-width: @width-tablet) {
+			font-size: 0.68rem;
+		}
+		&-group{
+			.text-right;
+			&-item{
+				box-sizing: border-box;
+				.inline-block;
+				border-left: 2px solid #444444;
+				padding: 35px 30px;
+				color: @base-color;
+				&:first-child{
+					border-left: none;
+				}
+				@media screen and (min-width: @width-tablet) {
+					padding: 10px;
+					&:first-child{
+						border-left: 2px solid #444444;
+					}
+					&:last-child{
+						border-right: 2px solid #444444;
+					}
+				}
+			}
 		}
 	}
 	.custom{
 		.text-center;
-		text-transform: uppercase;
+		box-sizing: border-box;
+		background-color: @base-color;
 		color: #838383;
+		padding: 35px 0;
+		@media screen and (min-width: @width-tablet) {
+			padding: 10px 0;
+			background-color: #000;
+			color: @base-color;
+		}
 	}
 
 }
