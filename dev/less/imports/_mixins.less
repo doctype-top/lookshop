@@ -14,3 +14,16 @@
 		padding: 10px 0;
 	}
 }
+.dropdown-icon(@color){
+	position: relative;
+	padding-right: 18px;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		border: 8px solid transparent;
+		border-top-color: @color;
+	}
+}
