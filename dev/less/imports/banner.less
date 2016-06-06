@@ -1,0 +1,116 @@
+.banner{
+	display: none;
+	position: relative;
+	@media screen and (min-width: @width-tablet) {
+		display: block;
+	}
+	&-wrap{
+		position: relative;
+		height: 350px;
+		overflow: hidden;
+		margin-bottom: 30px;
+		background: linear-gradient(to right, #f6f3ec 70%, #ebe4dc 100%);
+		@media screen and (min-width: @width-large) {
+			height: 440px;
+		}
+		.slide{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			&-item{
+				height: 100%;
+				position: relative;
+				img{
+					height: 100%;
+				}
+			}
+			&-descr{
+				.text-center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: #78645d;
+				.title{
+					display: inline-block;
+					font-size: 2rem;
+					font-family: @luxury;
+					margin-bottom: 5px;
+					position: relative;
+					&:before, &:after{
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 1px;
+						background-color: #78645d;
+						top: 50%;
+					}
+					&:before{
+						left: -110%;
+					}
+					&:after{
+						right: -110%;
+					}
+				}
+				.body{
+					font-family: @helvetica-hv;
+					font-size: 6rem;
+					text-transform: uppercase;
+					line-height: 4.6rem;
+					border-bottom: 4px solid #78645d;
+					padding-bottom: 6px;
+					-webkit-text-fill-color: transparent;
+					background: linear-gradient(transparent, transparent), url(../img/slider-text-bg.png) repeat;
+					-webkit-background-clip: text;
+				}
+			}
+		}
+	}
+	&-bottom{
+		.text-center;
+		.circle{
+			.inline-block;
+			width: 10px;
+			height: 10px;
+			border-radius: 10px;
+			background-color: #867a76;
+			margin-left: 20px;
+			&:first-child{
+				margin-left: 0;
+			}
+			&.active{
+				background-color: @base-bg-color;
+			}
+		}
+	}
+	&-but{
+		width: 30px;
+		height: 117px;
+		position: absolute;
+		background-color: #fff;
+		text-align: center;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+		transition: background-color 0.5s linear;
+		&:hover{
+			background-color: @base-bg-color;
+		}
+		&:before{
+			content: '';
+			.inline-block(middle);
+			height: 100%;
+		}
+		.icon{
+			vertical-align: middle;
+		}
+		&.left{
+			left: 0;
+		}
+		&.right{
+			right: 0;
+		}
+	}
+}
