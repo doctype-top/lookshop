@@ -2,17 +2,13 @@
 @import 'imports/_mixins';
 @import 'imports/sprite';
 @import 'imports/reset';
+@import 'imports/fonts';
 body{
 	font-family: @base-ff;
 	// font-size: @base-fs;
 }
 /*--------------icons------------------*/
-.icon-account{
-	.sprite(@account-big);
-	@media screen and (min-width: 768px){
-		.sprite(@account);
-	}
-}
+@import 'imports/icons';
 /*----------------container-------------------*/
 .container{
 	margin: 0 auto;

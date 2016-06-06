@@ -1,14 +1,16 @@
 .header{
 	background-color: @base-color;
+	margin-bottom: 20px;
 	&-top{
 		background-color: #000;
 		font-size: 1.9rem;
 		text-transform: uppercase;
 		@media screen and (min-width: @width-tablet) {
 			font-size: 0.68rem;
+			margin-bottom: 20px;
 		}
 		&-group{
-			.text-right;
+			text-align: center;
 			&-item{
 				box-sizing: border-box;
 				.inline-block;
@@ -20,6 +22,7 @@
 				}
 				@media screen and (min-width: @width-tablet) {
 					padding: 10px;
+					height: 34px;
 					&:first-child{
 						border-left: 2px solid #444444;
 					}
@@ -28,6 +31,27 @@
 					}
 				}
 			}
+			.dropdown{
+				.dropdown-icon(#ffffff);
+			}
+			.account{
+				.icon{
+					margin-right: 25px;
+					@media screen and (min-width: @width-tablet) {
+						margin-right: 7px;
+					}
+				}
+			}
+			@media screen and (min-width: @width-tablet) {
+				text-align: right;
+			}
+		
+		}
+	}
+	&-bottom{
+		padding: 0 2%;
+		@media screen and (min-width: @width-large) {
+			padding: 0;
 		}
 	}
 	.custom{
@@ -46,10 +70,15 @@
 		font-family: "Trebuchet MS", sans-serif;
 		font-size: 5.75875rem;
 		color: #000;
+		text-align: center;
+		padding: 53px 0;
+		display: block;
 		.big-logo{
 			display: none;
 		}
 		@media screen and (min-width: @width-tablet) {
+			text-align: left;
+			padding: 20px 0 0 0;
 			span, .small-logo{
 				display: none;
 			}
@@ -59,8 +88,18 @@
 		}
 	}
 	.cart{
-		color: #949393;
-		line-height: 95px;
+		margin-bottom: 25px;
+		@media screen and (min-width: @width-tablet){
+			margin-bottom: 0;
+			float: right;
+		}
+		&-wrap{
+			color: #949393;
+			line-height: 95px;
+			@media screen and (min-width: @width-tablet) {
+				line-height: 30px;
+			}
+		}
 		&-list{
 			display: none;
 			border: 1px solid #d6d6d6;
@@ -72,10 +111,7 @@
 				display: block;
 			}
 			.dropdown{
-				.dropdown-icon(red);
-				&:after{
-					right: 120px;
-				}
+				.dropdown-icon(#c1c1c1);
 			}
 		}
 		&-info{
@@ -89,15 +125,16 @@
 			text-align: right;
 			.icon{
 				float: left;
+				margin-top: 21px;
 			}
 			@media screen and (min-width: @width-tablet) {
 				height: 32px;
 				padding: 0 10px 0 9px;
 				font-size: 0.6875rem;
+				.icon{
+					margin-top: 7px;
+				}
 			}
-		}
-		@media screen and (min-width: @width-tablet) {
-			line-height: 30px;
 		}
 	}
 }

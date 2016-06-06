@@ -13,6 +13,12 @@ gulp.task('connect', function(){
     });
 });
 
+gulp.task('move', function(){
+	gulp.src('dev/img/*.png').pipe(gulp.dest('build/img/'));
+	gulp.src('dev/img/slider/*.png').pipe(gulp.dest('build/slider/'));
+	gulp.src('dev/fonts/*').pipe(gulp.dest('build/fonts/'));
+});
+
 gulp.task('spriteCreator', function(){
 	var sprite = gulp.src('dev/img/icons/*.png').pipe(spritesmith({
 		imgName: '../img/sprite.png',
@@ -33,7 +39,7 @@ gulp.task('htmlCreator', function(){
 });
 
 gulp.task('default', function(){
-    gulp.start('connect', 'htmlCreator', 'cssCreator');
+    gulp.start('connect', 'htmlCreator', 'cssCreator', 'move');
 
     gulp.watch(['dev/**/*.html'], function() {
         gulp.start('htmlCreator');

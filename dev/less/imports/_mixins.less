@@ -16,14 +16,22 @@
 }
 .dropdown-icon(@color){
 	position: relative;
-	padding-right: 18px;
+	padding-right: 30px;
 	&:after{
 		content: '';
 		position: absolute;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translateY(-25%);
 		right: 0;
-		border: 8px solid transparent;
+		border: 10px solid transparent;
 		border-top-color: @color;
+		@media screen and (min-width: @width-tablet){
+			border: 4px solid transparent;
+			border-top-color: @color;
+		}
 	}
+	@media screen and (min-width: @width-tablet){
+		padding-right: 15px;
+	}
+
 }
